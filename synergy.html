@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="synergy.css">
+    <title>Synergy Checker</title>
+</head>
+<body>
+
+<div class="form-wrapper">
+    <!-- First Form (Loan Eligibility Checker) -->
+    <div class="container" id="loanForm">
+        <h2>Loan Eligibility Checker</h2>
+        
+        <label>Loan Amount Needed ($):</label>
+        <input type="text" id="loanAmount" required oninput="formatNumber(this)">
+
+        <label>Last Month Deposit ($):</label>
+        <input type="text" id="lastDeposit" required oninput="formatNumber(this)">
+
+        <label>Credit Score:</label>
+        <input type="number" id="creditScore" required>
+
+        <label>Reason For Loan:</label>
+        <input type="text" id="loanReason">
+
+        <label>Business Owner Duration (Months):</label>
+        <input type="text" id="businessDuration" required oninput="formatDuration()">
+        <p id="businessDurationDisplay"></p> <!-- This will display the formatted duration -->        
+
+        <label>Industry:</label>
+        <input type="text" id="industry" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Defaulted/Bankruptcy (Y/N?):</label>
+        <select id="bankruptcy">
+            <option value="N">No</option>
+            <option value="Y">Yes</option>
+        </select>
+
+        <button onclick="checkLoan()">Submit</button>
+
+        <p id="message" class="error"></p>
+        <p id="dialNumber" class="success"></p>
+    </div>
+
+    <!-- Second Form (Contact Information) -->
+    <div class="container" id="contactForm">
+        <h2>Contact Information</h2>
+
+        <label>State:</label>
+        <input type="text" id="state" required oninput="convertState()">
+
+        <label>Contact Name:</label>
+        <input type="text" id="contactName" required onblur="formatName('contactName')">
+    
+        <label>Company Name:</label>
+        <input type="text" id="companyName" required onblur="formatCompanyName('companyName')">
+    
+        <label>Phone Number:</label>
+        <input type="text" id="phoneNumber" required onblur="formatPhoneNumber()">
+
+        <button onclick="submitContactForm()">Submit Contact Information</button>
+
+        <p id="contactMessage" class="success"></p>
+    </div>
+</div>
+
+<div class="darkButton">
+    <button id="darkMode" onclick="darkMode()"><i class="fas fa-moon"></i> Dark Mode</button>
+</div>
+
+<script src="synergy.js"></script>
+
+</body>
+</html>

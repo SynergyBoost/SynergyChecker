@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    gap: 30px;
+    position: relative;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+#loanForm {
+    opacity: 1;
+    visibility: visible;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: black;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    font-size: 18px;
+    font-weight: bold;
+    color: black; /* Default color for light mode */
+}
+
+/* Dark mode styles */
+.dark-mode .success {
+    color: aqua; /* Change to aqua in dark mode */
+}
+
+.dark-mode {
+    background: black;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #222;
+    color: white;
+}
+
+.darkButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+#darkMode {
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#darkMode:hover {
+    background: #444;
+}
