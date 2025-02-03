@@ -61,8 +61,11 @@
         <label>Company Name:</label>
         <input type="text" id="companyName" required onblur="formatCompanyName('companyName')">
     
-        <label>Phone Number:</label>
-        <input type="text" id="phoneNumber" required onblur="formatPhoneNumber()">
+        <label>Borrower Phone Number:</label>
+        <input type="text" id="borrowerPhoneNumber" required onblur="formatPhoneNumber('borrowerPhoneNumber'); checkAreaCode()">
+        
+        <p id="timeZoneResult"></p> <!-- Display state and time zone -->
+        
 
         <button onclick="submitContactForm()">Submit Contact Information</button>
 
